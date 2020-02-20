@@ -1,0 +1,40 @@
+* {
+	box-sizing: border-box;
+}
+@mobile: ~"only screen and (max-width: 529px)";
+@tablet: ~"only screen and (max-width: 949px)";
+@desktop: ~"only screen and (min-width: 950px)";
+
+.content-padding() {
+	padding: 2rem;
+}
+.input-padding() {
+	padding: 0.5rem;
+}
+.border-radius() {
+	border: 1px solid #535353;
+	border-radius: 0.5rem;
+}
+.margin-center() {
+	margin: 0 auto;
+}
+.margin-bottom() {
+	margin-bottom: 1rem;
+}
+
+//flex
+.col() {
+	display: flex;
+	flex-direction: column;
+}
+.f-space-between() {
+	display: flex;
+	justify-content: space-between;
+}
+
+//grid
+.g-center-center() {
+	display: grid;
+	justify-content: center;
+	align-items: center;
+}

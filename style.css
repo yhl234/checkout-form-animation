@@ -1,0 +1,327 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.container {
+  padding: 2rem;
+}
+.col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+body {
+  height: 100vh;
+  overflow: hidden;
+  background-color: #08aeea;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#2af598), to(#08aeea));
+  background-image: linear-gradient(0deg, #2af598 0%, #08aeea 100%);
+  background-image: linear-gradient(109.6deg, #cce4f7 11.2%, #edf6fa 100.2%);
+  position: relative;
+}
+#card {
+  width: 290px;
+  height: 180px;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: relative;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+#card #front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+#card #back {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.print {
+  content: "";
+  height: 400px;
+  width: 300px;
+  margin: 0 auto;
+  background: url("/images/slice1.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  -webkit-transform: translateY(-200px);
+          transform: translateY(-200px);
+}
+form {
+  -webkit-transition: all 1s cubic-bezier(0.79, 0.14, 0.15, 0.86);
+  transition: all 1s cubic-bezier(0.79, 0.14, 0.15, 0.86);
+  -webkit-transform: translateY(1500px) scaleX(0.1);
+          transform: translateY(1500px) scaleX(0.1);
+  opacity: 0;
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  width: 300px;
+  z-index: -1;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+form fieldset {
+  padding: 0;
+  border: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 1rem;
+}
+form label {
+  margin-bottom: 1rem;
+}
+form input,
+form select {
+  background: transparent;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #535353;
+  border-radius: 0.5rem;
+}
+form #card-month,
+form #card-year,
+form #card-ccv {
+  width: 4rem;
+}
+form button {
+  background: transparent;
+  font-weight: 700;
+  text-transform: capitalize;
+  padding: 0.5rem;
+  border: 1px solid #535353;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.card-flip {
+  -webkit-animation: flip 0.5s ease-in-out forwards;
+          animation: flip 0.5s ease-in-out forwards;
+}
+.card-flip-back {
+  -webkit-animation: flip-back 0.5s ease-in-out forwards;
+          animation: flip-back 0.5s ease-in-out forwards;
+}
+.submit-error {
+  -webkit-animation: error-shake 0.5s linear;
+          animation: error-shake 0.5s linear;
+}
+.submit-error input,
+.submit-error select {
+  border: 1px red solid;
+}
+.show-from {
+  -webkit-transform: translateY(0px) scaleX(1);
+          transform: translateY(0px) scaleX(1);
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  opacity: 1;
+  z-index: 1;
+}
+.hide-print {
+  -webkit-animation: form-in 1s cubic-bezier(0.79, 0.14, 0.15, 0.86) forwards;
+          animation: form-in 1s cubic-bezier(0.79, 0.14, 0.15, 0.86) forwards;
+}
+@-webkit-keyframes error-shake {
+  0% {
+    -webkit-transform: translate(0px, 0px) rotate(0deg);
+            transform: translate(0px, 0px) rotate(0deg);
+  }
+  10% {
+    -webkit-transform: translate(1px, -2px) rotate(1deg);
+            transform: translate(1px, -2px) rotate(1deg);
+  }
+  20% {
+    -webkit-transform: translate(2px, -1px) rotate(2deg);
+            transform: translate(2px, -1px) rotate(2deg);
+  }
+  30% {
+    -webkit-transform: translate(0px, -1px) rotate(-2deg);
+            transform: translate(0px, -1px) rotate(-2deg);
+  }
+  40% {
+    -webkit-transform: translate(1px, 2px) rotate(1deg);
+            transform: translate(1px, 2px) rotate(1deg);
+  }
+  50% {
+    -webkit-transform: translate(0px, -1px) rotate(-3deg);
+            transform: translate(0px, -1px) rotate(-3deg);
+  }
+  60% {
+    -webkit-transform: translate(-1px, -1px) rotate(-2deg);
+            transform: translate(-1px, -1px) rotate(-2deg);
+  }
+  70% {
+    -webkit-transform: translate(0px, 1px) rotate(2deg);
+            transform: translate(0px, 1px) rotate(2deg);
+  }
+  80% {
+    -webkit-transform: translate(2px, -3px) rotate(-4deg);
+            transform: translate(2px, -3px) rotate(-4deg);
+  }
+  90% {
+    -webkit-transform: translate(0px, -1px) rotate(-2deg);
+            transform: translate(0px, -1px) rotate(-2deg);
+  }
+  100% {
+    -webkit-transform: translate(1px, 1px) rotate(1deg);
+            transform: translate(1px, 1px) rotate(1deg);
+  }
+}
+@keyframes error-shake {
+  0% {
+    -webkit-transform: translate(0px, 0px) rotate(0deg);
+            transform: translate(0px, 0px) rotate(0deg);
+  }
+  10% {
+    -webkit-transform: translate(1px, -2px) rotate(1deg);
+            transform: translate(1px, -2px) rotate(1deg);
+  }
+  20% {
+    -webkit-transform: translate(2px, -1px) rotate(2deg);
+            transform: translate(2px, -1px) rotate(2deg);
+  }
+  30% {
+    -webkit-transform: translate(0px, -1px) rotate(-2deg);
+            transform: translate(0px, -1px) rotate(-2deg);
+  }
+  40% {
+    -webkit-transform: translate(1px, 2px) rotate(1deg);
+            transform: translate(1px, 2px) rotate(1deg);
+  }
+  50% {
+    -webkit-transform: translate(0px, -1px) rotate(-3deg);
+            transform: translate(0px, -1px) rotate(-3deg);
+  }
+  60% {
+    -webkit-transform: translate(-1px, -1px) rotate(-2deg);
+            transform: translate(-1px, -1px) rotate(-2deg);
+  }
+  70% {
+    -webkit-transform: translate(0px, 1px) rotate(2deg);
+            transform: translate(0px, 1px) rotate(2deg);
+  }
+  80% {
+    -webkit-transform: translate(2px, -3px) rotate(-4deg);
+            transform: translate(2px, -3px) rotate(-4deg);
+  }
+  90% {
+    -webkit-transform: translate(0px, -1px) rotate(-2deg);
+            transform: translate(0px, -1px) rotate(-2deg);
+  }
+  100% {
+    -webkit-transform: translate(1px, 1px) rotate(1deg);
+            transform: translate(1px, 1px) rotate(1deg);
+  }
+}
+@-webkit-keyframes flip {
+  from {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  to {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+}
+@keyframes flip {
+  from {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  to {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+}
+@-webkit-keyframes flip-back {
+  from {
+    -webkit-transform: rotateY(-180deg);
+            transform: rotateY(-180deg);
+  }
+  to {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+}
+@keyframes flip-back {
+  from {
+    -webkit-transform: rotateY(-180deg);
+            transform: rotateY(-180deg);
+  }
+  to {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+}
+@-webkit-keyframes form-in {
+  0% {
+    -webkit-transform: translateY(-200px);
+            transform: translateY(-200px);
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 0.8;
+    z-index: 1;
+  }
+}
+@keyframes form-in {
+  0% {
+    -webkit-transform: translateY(-200px);
+            transform: translateY(-200px);
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 0.8;
+    z-index: 1;
+  }
+}
